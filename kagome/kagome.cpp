@@ -236,7 +236,6 @@ int main() {
 
 #ifdef KAGOME_POLYNOMIAL_TEST
 
-#define EIGEN_DONT_VECTORIZE
     Eigen::IOFormat fmtMat(4, 0, ", ", "\n", "[", "]");
 
     Eigen::MatrixXPoly testSq, testDc;
