@@ -235,18 +235,16 @@ int main() {
 #endif
 
 #ifdef KAGOME_POLYNOMIAL_TEST
+
+#define EIGEN_DONT_VECTORIZE
     Eigen::IOFormat fmtMat(4, 0, ", ", "\n", "[", "]");
 
-    auto testSq = genPolyMatrix(countSqPoly, dim);
-    auto testDc = genPolyMatrix(countDcPoly, dim);
+    Eigen::MatrixXPoly testSq, testDc;
+
+    testSq = genPolyMatrix(countSqPoly, dim);
+    testDc = genPolyMatrix(countDcPoly, dim);
     auto test = testSq * testDc;
 
-    for (size_t i = 0; i < 4; i++) {
-        for (size_t j = 0; j < 4; j++) {
-            std::cout << std::format("Polynomial ({}, {}): ", i, j) << test(i, j) << '\n';
-        }
-    }
-
-    std::cout << test.format(fmtMat) << '\n' << test.trace();
+    std::cout << test.trace();
 #endif
 }

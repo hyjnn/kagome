@@ -46,7 +46,7 @@ namespace Eigen {
     {
         typedef Polynomial Real;
         typedef Polynomial NonInteger;
-        typedef Polynomial Nested;
+        typedef const Polynomial& Nested;
 
         static inline Real epsilon() { return Polynomial(0); }
         static inline Real dummy_precision() { return Polynomial(0); }

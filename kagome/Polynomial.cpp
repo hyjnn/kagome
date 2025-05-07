@@ -79,12 +79,6 @@ Polynomial& Polynomial::operator*=(double x) {
 	return *this;
 }
 
-//Matrix form printing
-//std::ostream& operator<<(std::ostream& stream, const Polynomial& p) {
-//	stream << p.coefficients.format(Eigen::IOFormat(4, 0, ", ", "\n", "[", "]"));
-//	return stream;
-//}
-
 static std::string monomial(size_t i, size_t j, size_t k) {
 	std::string result = "";
 
