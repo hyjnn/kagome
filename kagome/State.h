@@ -3,6 +3,8 @@
 #include <vector>
 #include <iostream>
 
+//1 = arrow left
+//0 = arrow right
 class State {
     std::vector<double> states;
 

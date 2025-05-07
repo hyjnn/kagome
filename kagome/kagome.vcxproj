@@ -146,14 +146,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="kagome.cpp" />
+    <ClCompile Include="Polynomial.cpp" />
     <ClCompile Include="State.cpp" />
-    <ClCompile Include="stateClass.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TransferMatrix.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Polynomial.h" />
     <ClInclude Include="State.h" />
-    <ClInclude Include="stateClass.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TransferMatrix.h" />
   </ItemGroup>
