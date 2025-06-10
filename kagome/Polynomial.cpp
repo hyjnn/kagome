@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <cmath>
+#include <format>
 #include <iostream>
 #include <stdexcept>
 #include <string>
@@ -45,7 +46,11 @@ Polynomial operator-(Polynomial p, const Polynomial& q) {
 }
 
 Polynomial operator*(const Polynomial &p, const Polynomial &q) {
-	Polynomial result(p.degree() + q.degree()); //dims are equal to degree + 1
+	if (p == Polynomial(0) || q == Polynomial(0)) {
+		return Polynomial(0);
+	}
+
+	Polynomial result(p.degree() + q.degree());
 
 	for (size_t i = 0; i <= result.degree(); i++) {
 		for (size_t j = 0; j <= result.degree() - i; j++) { //first two loops select output monomial
@@ -115,7 +120,7 @@ std::ostream& operator<<(std::ostream& stream, const Polynomial& p) {
 					isFirst = false;
 				}
 				if (p.coefficients(i, j) != 1)
-					textForm += std::to_string(p.coefficients(i, j));
+					textForm += std::format("{}", p.coefficients(i, j));
 				textForm += monomial(i, j, p.degree() - i - j);
 			}
 		}
